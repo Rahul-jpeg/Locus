@@ -28,7 +28,6 @@ def encrypt(text, key):
 
 # Function to decrypt the data
 def decrypt(encrypted_text, key):
-    # fernet_key = Fernet(base64.urlsafe_b64encode(key.encode()[:32]))
     fernet_key = Fernet(key)
     decrypted_text = fernet_key.decrypt(encrypted_text).decode()
     return decrypted_text
@@ -139,7 +138,6 @@ def retrieve_data(master_dict):
                 break
 
         # Prompt the user for the key to decrypt
-        # decryption_key = input("Enter the key to decrypt: ").strip()
         decryption_key = load_key()
 
         # Retrieve the key-value pair and decrypt
