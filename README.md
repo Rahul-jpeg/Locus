@@ -1,8 +1,8 @@
-# Locus
+# 💾 Locus
 
 Locus is a Secure Data Management System that allows you to store, retrieve, view, and delete sensitive information securely. It provides a command-line interface for managing your data with encryption and password protection.
 
-## Installation Guide
+## 🖥️ Installation Guide
 
 Before using, make sure you have the following prerequisites installed:
 
@@ -23,7 +23,9 @@ Follow these steps to set up and run the system:
    ```
 3. Generate a secret key for encryption (_copy the generated token_):
 
-   `openssl rand -base64 32` - _OpenSSL_
+   ```
+   openssl rand -base64 32
+   ``` 
 
    **OR**
 
@@ -37,7 +39,9 @@ Follow these steps to set up and run the system:
 
 4. Create a `.env` file in the project directory and add the generated token. You can generate a secret key and add it to the `.env` file as follows:
 
-   `echo "SECRET=your_secret_key_here" > .env`
+   ```
+   echo "SECRET=your_secret_key_here" > .env
+   ```
 
 > _replace "your_secret_key_here" with the copied token_
 
@@ -48,13 +52,13 @@ Follow these steps to set up and run the system:
     python locus.py
     ```
 
-## Working
+## ⚙️ Working
 
 When the program is run, you'll be shown the following menu in the command-line interface:
 
 ![cli-menu](_images_/locusMenu.png)
 
-### Store
+### 📦 Store
 
 To store sensitive information, follow these steps:
 
@@ -64,7 +68,7 @@ To store sensitive information, follow these steps:
 4.  Choose a unique 3-character key to identify this data. Ensure that the key is alphanumeric and in uppercase (e.g., "ABC" or "AB1").
 5.  Your data will be encrypted and securely stored.
 
-### Retrieve
+### 🔓 Retrieve
 
 To retrieve stored data, follow these steps:
 
@@ -72,7 +76,7 @@ To retrieve stored data, follow these steps:
 2.  Enter the 3-character key associated with the data you want to retrieve.
 3.  The system will decrypt and display the label and value associated with the key.
 
-### View
+### 📃 View
 
 To view all stored data in an HTML file, follow these steps:
 
@@ -80,7 +84,7 @@ To view all stored data in an HTML file, follow these steps:
 2.  The system will generate an HTML file (`data.html`) containing a list of all stored data.
 3.  The HTML file is hosted on `localhost:6001`. You can access it using a web browser.
 
-### Delete
+### ❌ Delete
 
 To delete stored data, follow these steps:
 
@@ -92,4 +96,5 @@ To delete stored data, follow these steps:
 
 1. Select the "Exit" option to exit from the process
 
-Please ensure that you remember your secret key (used for encryption and decryption) as it's crucial for securely managing your data. If you lose the secret key, you won't be able to retrieve or view your stored information.
+
+> ***Please ensure that you remember your secret key (used for encryption and decryption) as it's crucial for securely managing your data. If you lose the secret key, you won't be able to retrieve or view your stored information.***
