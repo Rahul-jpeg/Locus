@@ -147,9 +147,7 @@ def retrieve_data(master_dict):
         encrypted_label = base64.b64decode(encrypted_label)
         encrypted_value = base64.b64decode(encrypted_value)
 
-        # Replace '-1' with decryption key
         label = decrypt(encrypted_label, key=decryption_key)
-        # Replace '-2' with decryption key
         value = decrypt(encrypted_value, key=decryption_key)
 
         print(f"Label: {label}")
