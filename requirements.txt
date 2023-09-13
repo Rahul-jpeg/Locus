@@ -1,0 +1,10 @@
+cffi==1.15.1
+cryptography==41.0.2
+prompt-toolkit==1.0.14
+pycparser==2.21
+pygments==2.16.1
+pyinquirer==1.0.3
+python-dotenv==1.0.0
+regex==2023.8.8
+six==1.16.0
+wcwidth==0.2.6
