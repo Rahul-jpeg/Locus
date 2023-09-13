@@ -92,7 +92,7 @@ To delete stored data, follow these steps:
 2.  Enter the 3-character key associated with the data you want to delete.
 3.  The data will be permanently removed from the system.
 
-## Exit
+### 🚪 Exit
 
 1. Select the "Exit" option to exit from the process
 
