@@ -212,6 +212,39 @@ def view_data(master_dict):
         print("No data found.")
 
 
+def delete_data(master_dict):
+
+    while True:
+
+        if os.path.exists("data.bin"):
+            with open("data.bin", "rb") as f:
+                binary_data = f.read()
+                decoded_data = base64.b64decode(binary_data).decode()
+                master_dict = json.loads(decoded_data)
+        else:
+            print("No data found.")
+            return
+
+        # Prompt the user for the key
+        while True:
+            key = input("Enter the key: ").strip()
+            if len(key) != 3 or not key.isalnum() or not key.isupper():
+                print("Invalid key format.")
+            elif key not in master_dict:
+                print("Key not found.")
+            else:
+                break
+
+        del master_dict[key]
+        # Storing back the master dictionary back to the file as binary data
+        binary_data = base64.b64encode(json.dumps(master_dict).encode())
+        with open("data.bin", "wb") as f:
+            f.write(binary_data)
+
+        print("Data modified successfully.")
+        break
+
+
 # Function to shutdown the server
 def stop_server(sig, frame):
     global server
@@ -237,6 +270,7 @@ def select_option():
                 'Store',
                 'Retrieve',
                 'View',
+                'Delete'
             ],
         }
     ]
@@ -255,6 +289,8 @@ def main():
         retrieve_data(master_dict)
     elif option == "View":
         view_data(master_dict)
+    elif option == "Delete":
+        delete_data(master_dict)
     else:
         print("Invalid option.")
 
